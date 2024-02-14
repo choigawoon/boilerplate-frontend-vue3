@@ -62,16 +62,16 @@ onMounted(() => {
   const sliderContainer = document.querySelector('.slider-container');
   if (sliderContainer) {
     console.log('onMounted, slider-container found', sliderContainer)
-    sliderContainer.addEventListener('mousemove', handleMouseMove);
-    sliderContainer.addEventListener('touchmove', handleTouchMove);
+    sliderContainer.addEventListener('mousemove', handleMouseMove as EventListener);
+    sliderContainer.addEventListener('touchmove', handleTouchMove as EventListener);
   }
 });
 
 onUnmounted(() => {
   const sliderContainer = document.querySelector('.slider-container');
   if (sliderContainer) {
-    sliderContainer.removeEventListener('mousemove', handleMouseMove);
-    sliderContainer.removeEventListener('touchmove', handleTouchMove);
+    sliderContainer.removeEventListener('mousemove', handleMouseMove as EventListener);
+    sliderContainer.removeEventListener('touchmove', handleTouchMove as EventListener);
   } else {
     console.log('onUnmounted, not found slider-container')
   }
